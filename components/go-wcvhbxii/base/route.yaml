@@ -1,0 +1,18 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata: 
+  labels: 
+    app.kubernetes.io/instance: go-wcvhbxii
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: go-wcvhbxii 
+  name: go-wcvhbxii
+spec:
+  port:
+    targetPort: 8081 
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: edge
+  to:
+    kind: Service
+    name: go-wcvhbxii
+    weight: 100 
